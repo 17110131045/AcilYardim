@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="chatleft"
+            type="com.nexis.acilyardim.model.Chat" />
+
+        <variable
+            name="userleft"
+            type="com.nexis.acilyardim.model.User" />
+
+        <variable
+            name="chatright"
+            type="com.nexis.acilyardim.model.Chat" />
+
+        <variable
+            name="userright"
+            type="com.nexis.acilyardim.model.User" />
+    </data>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:id="@+id/chat_item_relativeLeft"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:downloadImage="@{userleft.userProfileUrl}"
+            android:id="@+id/chat_item_imgLeftProfile"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/chat_item_imgLeftProfile"
+            android:layout_marginStart="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@{userleft.userName}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:id="@+id/chat_item_txtLeftName"
+                android:textColor="?attr/chatLeftItemTitleColor"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@{chatleft.messageContent}"
+                android:textSize="14sp"
+                android:paddingEnd="10dp"
+                android:id="@+id/chat_item_txtLeftContent"
+                android:layout_marginTop="2.5dp"
+                android:paddingStart="10dp"
+                android:visibility="gone"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/chat_left_bg"
+                android:alpha="0.85"
+                android:textColor="?attr/chatLeftTxtColor"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:orientation="horizontal"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/chat_item_relativeRight"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:gravity="end"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/chat_item_imgRightProfile"
+            android:layout_marginEnd="10dp"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@{userright.userName}"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:id="@+id/chat_item_txtRightName"
+                android:textColor="?attr/chatRightItemTitleColor"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@{chatright.messageContent}"
+                android:textSize="14sp"
+                android:paddingEnd="10dp"
+                android:id="@+id/chat_item_txtRightContent"
+                android:layout_marginTop="2.5dp"
+                android:paddingStart="10dp"
+                android:visibility="gone"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:background="@drawable/chat_right_bg"
+                android:alpha="0.85"
+                android:textColor="?attr/chatRightTxtColor"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:downloadImage="@{userright.userProfileUrl}"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:id="@+id/chat_item_imgRightProfile"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</layout>

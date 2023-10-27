@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1052958942216",
+    "project_id": "acil-yardim-13687",
+    "storage_bucket": "acil-yardim-13687.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052958942216:android:d1f78c0f302a4e4e591dbd",
+        "android_client_info": {
+          "package_name": "com.nexis.acilyardim"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClEwbwWj3gLfUkkIvqruls-D9dtYLHzQo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

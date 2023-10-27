@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="user"
+            type="com.nexis.acilyardim.model.User" />
+
+        <variable
+            name="chat"
+            type="com.nexis.acilyardim.model.Chat" />
+    </data>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    app:cardBackgroundColor="?attr/whiteColor"
+    app:cardElevation="5dp"
+    app:contentPadding="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="55dp"
+            android:id="@+id/messages_item_imgProfile"
+            android:downloadImage="@{user.userProfileUrl}"
+            android:layout_height="55dp"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/messages_item_imgProfile"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="@{user.userName}"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="?attr/redColor"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:lines="1"
+                android:ellipsize="end"
+                android:id="@+id/messages_item_txtLastMessages"
+                android:text="@{chat.messageContent}"
+                android:textSize="15sp"
+                android:textColor="?attr/pinkColor"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+</layout>

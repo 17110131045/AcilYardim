@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="targetuser"
+            type="com.nexis.acilyardim.model.User" />
+    </data>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.ChatFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/chat_fragment_cardTop"
+        app:contentPadding="10dp"
+        app:cardElevation="5dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="56dp"
+                android:layout_marginStart="5dp"
+                android:downloadImage="@{targetuser.userProfileUrl}"
+                android:id="@+id/chat_fragment_imgProfile"
+                android:layout_height="56dp"
+                app:civ_border_width="2dp"
+                app:civ_border_color="?attr/redColor"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:layout_toStartOf="@+id/chat_fragment_imgClose"
+                android:layout_toEndOf="@+id/chat_fragment_imgProfile"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@{targetuser.userName}"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="?attr/redColor"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textSize="14sp"
+                    android:setOnlineStatus="@{targetuser.userIsOnline}"
+                    android:textColor="?attr/redColor"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_marginEnd="5dp"
+                android:id="@+id/chat_fragment_imgClose"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/close_icon"
+                android:layout_height="20dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:scrollbars="none"
+        android:layout_below="@id/chat_fragment_cardTop"
+        android:layout_above="@+id/chat_fragment_relativeBottom"
+        android:id="@+id/chat_fragment_recyclerView"
+        android:layout_height="match_parent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:id="@+id/chat_fragment_relativeBottom"
+        android:layout_marginStart="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="Bir mesaj yazınız..."
+            android:paddingStart="15dp"
+            android:textSize="16sp"
+            android:layout_alignParentStart="true"
+            android:paddingEnd="15dp"
+            android:id="@+id/chat_fragment_editMessage"
+            android:layout_marginEnd="15dp"
+            android:layout_toStartOf="@id/chat_fragment_imgSend"
+            android:textColorHint="?attr/editTxtColor"
+            android:textColor="?attr/editTxtColor"
+            android:background="@drawable/edit_bg"
+            android:layout_height="50dp"/>
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/chat_fragment_imgSend"
+            android:src="@drawable/send_icon"
+            android:layout_height="35dp"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+</layout>

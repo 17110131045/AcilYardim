@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.MainFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_alignParentTop="true"
+        android:id="@+id/main_fragment_toolBar"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:text="ACİL YARDIM"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:textColor="?attr/redColor"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:id="@+id/main_fragment_frameLayout"
+        android:layout_below="@id/main_fragment_toolBar"
+        android:layout_above="@id/main_fragment_bottomNav"
+        android:layout_height="match_parent"/>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/main_fragment_bottomNav"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_menu"
+        app:itemTextColor="@color/bottom_menu_colors"
+        app:itemIconTint="@color/bottom_menu_colors"/>
+
+</RelativeLayout>

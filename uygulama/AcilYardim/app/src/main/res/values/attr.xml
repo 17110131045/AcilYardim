@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AppColors">
+        <attr name="appBgColor" format="color"/>
+        <attr name="editBgColor" format="color"/>
+        <attr name="editTxtColor" format="color"/>
+        <attr name="redBtnBgColor" format="color"/>
+        <attr name="yellowBtnBgColor" format="color"/>
+        <attr name="whiteColor" format="color"/>
+        <attr name="redColor" format="color"/>
+        <attr name="pinkColor" format="color"/>
+        <attr name="dialogBtnBgColor" format="color"/>
+        <attr name="statusBarBgColor" format="color"/>
+        <attr name="bottomSelectedMenuColor" format="color"/>
+        <attr name="bottomUnSelectedMenuColor" format="color"/>
+        <attr name="onlineBgColor" format="color"/>
+        <attr name="offlineBgColor" format="color"/>
+        <attr name="chatLeftItemTitleColor" format="color"/>
+        <attr name="chatLeftTxtColor" format="color"/>
+        <attr name="chatLeftBgColor" format="color"/>
+        <attr name="chatRightItemTitleColor" format="color"/>
+        <attr name="chatRightTxtColor" format="color"/>
+        <attr name="chatRightBgColor" format="color"/>
+    </declare-styleable>
+</resources>
